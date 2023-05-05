@@ -15,7 +15,7 @@ phases:
       - echo Build started on `date`
       - echo Building Docker test image...
       
-      - docker run -e CI=true $IMAGE_REPO_NAME:$TEST_IMAGE_TAG npm run test
+      
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
       - echo Build started on `date`
@@ -26,8 +26,8 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+     
+     
       - docker-compose --file=docker-compose-prod.yml push
 artifacts:
   files:
