@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker-compose --file=docker-compose-prod.yml up
+      
       - docker-compose --file=docker-compose-prod.yml build
       - docker-compose --file=docker-compose-prod.yml build --no-cache
 
