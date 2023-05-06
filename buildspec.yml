@@ -20,8 +20,6 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker-compose --file=docker-compose-prod.yml push
-      - docker-compose --file=docker-compose-prod.yml push --no-cache
-     
 artifacts:
   files:
     - 'Dockerrun.aws.json'
