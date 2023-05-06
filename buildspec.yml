@@ -16,13 +16,12 @@ phases:
       
       - docker-compose --file=docker-compose-prod.yml build
       - docker-compose --file=docker-compose-prod.yml build --no-cache
-
-      
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker-compose --file=docker-compose-prod.yml push
+      - docker-compose --file=docker-compose-prod.yml push --no-cache
 artifacts:
   files:
     - 'Dockerrun.aws.json'
