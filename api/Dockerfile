@@ -1,6 +1,6 @@
 FROM node:12.13.0-alpine
 
-WORKDIR /usr/src/app/api
+WORKDIR /home/ec2-user/docker/api
 COPY package*.json ./
 RUN npm install
 COPY . .
