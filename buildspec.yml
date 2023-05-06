@@ -20,6 +20,7 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker-compose --file=docker-compose-prod.yml push
+      - docker-compose --file=docker-compose-prod.yml push --no-cache
       - printf '[{"name":"exp-code-pipeline","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > Dockerrun.aws.json
 artifacts:
   files:
